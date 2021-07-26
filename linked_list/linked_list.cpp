@@ -52,9 +52,8 @@ void linked_list::insert (int pos, int value)
         p->next = tmp->next;
         tmp->next = p;
     }
+    length++;
 }
-
-
 
 int linked_list::len()
 {
@@ -74,4 +73,5 @@ void linked_list::del (int pos)
     temp = tmp->next;
     tmp->next = temp->next;
     delete temp;
+    length--;
 }
