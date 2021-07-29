@@ -10,8 +10,8 @@ int main()
     for(int i = 0; i < 5; i++)
     {
         a.append(i);
-        //b.append(i*10);
-        //d.append(i*5);
+        b.append(i*10);
+        d.append(i*5);
     }
     
     linked_list c;
