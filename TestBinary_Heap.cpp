@@ -3,7 +3,7 @@
 #include <math.h>
 #include "Binary_Heap/Binary_Heap.h"
 
-void show_array(int *array, int nb_data);
+void show_binary_tree(int *array, int nb_data);
 
 int main()
 {
@@ -13,25 +13,20 @@ int main()
     double Time;
     int nb_data = 30;
     int Array[30] = {};
-    
-    /*for (int i = 0; i < nb_data-20; i++)
-    {
-        Array[i]=nearbyint(rand()%(nb_data*5));
-    } */
-
-    Binary_Heap tree(Array);
+    int Head[5] = {};
+    Binary_Heap tree(Array, true);
     
     //Body
     t0=clock();
     std::cout<<std::endl<<"inicio programa"<<std::endl;
-    show_array(Array, nb_data);
+    show_binary_tree(Array, nb_data);
     std::cout<<std::endl;
 
     for(int i = 1; i < 11; i++)
     {
         tree.Insert(i);
         std::cout<<"Insert: "<<i<<","<<std::endl;
-        show_array(Array, nb_data);    
+        show_binary_tree(Array, nb_data);    
         std::cout<<std::endl;
     }
     
@@ -39,13 +34,22 @@ int main()
     {
         tree.Insert(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        show_array(Array, nb_data);    
+        show_binary_tree(Array, nb_data);    
         std::cout<<std::endl;
     }
+
+    for(int i = 0; i < 5; i++)
+    {
+        Head[i] = tree.Delete_Head();
+         std::cout<<"delete: "<<Head[i]<<","<<std::endl;
+        show_binary_tree(Array, nb_data);    
+        std::cout<<std::endl;
+    }
+
     return 0;
 }
 
-void show_array(int *array, int nb_data){
+void show_binary_tree(int *array, int nb_data){
 
 int k = 1;
 int step = 1;

@@ -8,18 +8,20 @@ class Binary_Heap
         int *Array;
         int length;
         int Aux;
+        bool ascendant;
 
     public:
-        Binary_Heap(int *Array_r);
+        Binary_Heap(int *Array_r, bool ascendant_bool_r);
         ~Binary_Heap();
         void Insert(int x);
+        int Delete_Head();
+
 
     private:
         void Swim(int k);
         void Sink(int k);
         void Exchange(int , int );
-        bool Less(int , int);
-        int Delete_Max();
+        bool Compare(int , int);
 };
 
 #endif
