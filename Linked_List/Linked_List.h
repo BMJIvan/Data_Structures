@@ -25,7 +25,7 @@ class Linked_List
         static void display (Linked_List *list)
         {
             if (list->head == NULL)
-             {
+            {
                 std::cout << "Empty" << std::endl;
                 return;
             }
