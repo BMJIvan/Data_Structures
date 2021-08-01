@@ -11,10 +11,10 @@ struct node
 class Linked_List_Priority_Queue
 {
     private:
-        node *head, *tail;
+        node *head;
         int length;
         int Number_Values;
-        bool ascendant;
+        bool Max_Values;
         
     public:
         Linked_List_Priority_Queue(int Number_Values_r, bool ascendant_r);

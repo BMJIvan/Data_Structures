@@ -4,11 +4,11 @@
 int main()
 {
     int Number_Values = 5;
-    bool ascendant = false;
-    Linked_List_Priority_Queue list(Number_Values, ascendant);
+    bool Max_Values = true;
+    Linked_List_Priority_Queue list(Number_Values, Max_Values);
     int data;
 
-    for(int i = 0; i < 10; i++)
+    for(int i = 10; i > 0; i--)
     {
         list.enqueue(i);
         std::cout<<"push: "<<i<<","<<std::endl;
