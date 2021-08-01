@@ -1,19 +1,19 @@
-#include "linked_list.h" 
-linked_list::linked_list()
+#include "Linked_List.h" 
+Linked_List::Linked_List()
 {
     head = NULL;
     tail = NULL;
     length = 0;
 }
 
-linked_list::~linked_list(){
-
+Linked_List::~Linked_List(){
+     
 }
 
-void linked_list::append(int n)
+void Linked_List::append(int Value)
 {
     node *tmp = new node;
-    tmp->data = n;
+    tmp->data = Value;
     tmp->next = NULL;
     
     if (head == NULL)
@@ -26,12 +26,12 @@ void linked_list::append(int n)
         tail->next = tmp;
         tail = tail->next;
     }
-    length = length + 1;
+    length++;
 }
 
-void linked_list::insert (int pos, int value)
+void Linked_List::insert (int pos, int value)
 {
-    if(pos+1 > length) return;
+    if(pos >= length) return;
     node *p = new node;
     p->data = value;
 
@@ -44,31 +44,23 @@ void linked_list::insert (int pos, int value)
     {
         node *tmp;
         tmp = head;
-        while(pos>1)
-        {
-            tmp=tmp->next;
-            --pos;
-        }
+        while(pos-- > 1)    tmp=tmp->next;
         p->next = tmp->next;
         tmp->next = p;
     }
     length++;
 }
 
-int linked_list::len()
+int Linked_List::len()
 {
     return length;
 }
-void linked_list::del (int pos)
+void Linked_List::del (int pos)
 {
     if(length == 0 || pos < 0 || pos >= length) return;
     node *tmp;
     tmp = head; 
-    while(pos>1)
-    {
-        tmp=tmp->next;
-        --pos;
-    }
+    while(pos-- > 1)    tmp=tmp->next;
     node *temp;
     temp = tmp->next;
     tmp->next = temp->next;
