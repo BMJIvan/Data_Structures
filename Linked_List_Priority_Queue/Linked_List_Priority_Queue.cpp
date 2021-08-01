@@ -1,4 +1,4 @@
-#include "Linked_List_Priority_Queue.h" 
+ #include "Linked_List_Priority_Queue.h"
 
 Linked_List_Priority_Queue::Linked_List_Priority_Queue(int Number_Values_r, bool ascendant_r)
 {
@@ -39,14 +39,35 @@ void Linked_List_Priority_Queue::enqueue(int n)
                 if(length > Number_Values)  dequeue();
                 break;
             }
+            else
+            {
+                if(i + 1 == length && i + 1 < Number_Values)
+                {
+                    Append(tmp->data);
+                    if(length > Number_Values)  dequeue();
+                    break;
+                }
+            }
             compare = compare->next;
         }
     }
 }
 
+void Linked_List_Priority_Queue::Append(int Value)
+{
+    node *p = new node;
+    p->data = Value;
+    p->next = NULL;
+    node *tmp;
+    tmp = head;
+    while(tmp->next != NULL)    tmp=tmp->next;
+    tmp->next = p;
+    length++;
+}
+
 bool Linked_List_Priority_Queue::Compare(int i, int j)
 {
-    return ascendant==true ? i < j : i > j;
+    return ascendant==true ? (i > j ? false : true) : (i < j ? false : true);
 }
 
 void Linked_List_Priority_Queue::Insert(int pos, int value)
@@ -59,13 +80,14 @@ void Linked_List_Priority_Queue::Insert(int pos, int value)
         p->next = head;
         head = p;
     }
-    else 
+    else
     {
         node *tmp;
         tmp = head;
         while(pos-- > 1)    tmp=tmp->next;
         p->next = tmp->next;
         tmp->next = p;
+        
     }
     length++;
 }

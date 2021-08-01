@@ -1,16 +1,18 @@
 #include <iostream>
-#include "linked_list_priority_queue/linked_list_priority_queue.h"
+#include "Linked_List_Priority_Queue/Linked_List_Priority_Queue.h"
 
 int main()
 {
-    linked_list_priority_queue list(5);
+    int Number_Values = 5;
+    bool ascendant = false;
+    Linked_List_Priority_Queue list(Number_Values, ascendant);
     int data;
 
     for(int i = 0; i < 10; i++)
     {
         list.enqueue(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        linked_list_priority_queue::display(list);
+        Linked_List_Priority_Queue::display(&list);
         std::cout<<std::endl;
     }
     
@@ -18,7 +20,7 @@ int main()
     {
         list.enqueue(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        linked_list_priority_queue::display(list);
+        Linked_List_Priority_Queue::display(&list);
         std::cout<<std::endl;
     }
 

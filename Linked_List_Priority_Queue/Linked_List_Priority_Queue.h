@@ -24,6 +24,7 @@ class Linked_List_Priority_Queue
         int len();
         int dequeue();
         void Insert(int pos, int value);
+        void Append(int Value);
         bool Compare(int i, int j);
         static void display (Linked_List_Priority_Queue *list)
         {
@@ -37,7 +38,7 @@ class Linked_List_Priority_Queue
             while(tmp != NULL)
             {
                 std::cout << tmp->data <<","; //std::endl;
-                tmp=tmp->next;
+                tmp = tmp->next;
             }
         }
         static void delete_list(Linked_List_Priority_Queue *list)
