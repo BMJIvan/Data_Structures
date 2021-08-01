@@ -1,5 +1,5 @@
-#ifndef linked_list_queue_H
-#define linked_list_queue_H
+#ifndef Linked_List_Queue_H
+#define Linked_List_Queue_H
 #include <iostream>
 
 struct node
@@ -8,20 +8,20 @@ struct node
     node *next;
 };
 
-class linked_list_queue
+class Linked_List_Queue
 {
     private:
         node *head, *tail;
         int length;
         
     public:
-        linked_list_queue();
-        ~linked_list_queue();
+        Linked_List_Queue();
+        ~Linked_List_Queue();
 
         void enqueue(int n);
         int len();
         int dequeue();
-        static void display (linked_list_queue *list)
+        static void display (Linked_List_Queue *list)
         {
             if (list->head == NULL)
              {
@@ -36,7 +36,7 @@ class linked_list_queue
                 tmp=tmp->next;
             }
         }
-        static void delete_list(linked_list_queue *list)
+        static void delete_list(Linked_List_Queue *list)
         {
             if(list->head == NULL)
             {

@@ -1,16 +1,17 @@
-#include "linked_list_queue.h" 
-linked_list_queue::linked_list_queue()
+#include "Linked_List_Queue.h"
+
+Linked_List_Queue::Linked_List_Queue()
 {
     head = NULL;
     tail = NULL;
     length = 0;
 }
 
-linked_list_queue::~linked_list_queue(){
+Linked_List_Queue::~Linked_List_Queue(){
 
 }
 
-void linked_list_queue::enqueue(int n)
+void Linked_List_Queue::enqueue(int n)
 {
     node *tmp = new node;
     tmp->data = n;
@@ -31,12 +32,12 @@ void linked_list_queue::enqueue(int n)
     length++;
 }
 
-int linked_list_queue::len()
+int Linked_List_Queue::len()
 {
     return length;
 }
 
-int linked_list_queue::dequeue()
+int Linked_List_Queue::dequeue()
 {
     if(head == NULL) return -1;
     int pos = length;
