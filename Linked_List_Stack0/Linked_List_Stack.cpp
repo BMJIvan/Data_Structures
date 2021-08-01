@@ -1,16 +1,16 @@
-#include "linked_list_stack.h" 
-linked_list_stack::linked_list_stack()
+#include "Linked_List_Stack.h" 
+Linked_List_Stack::Linked_List_Stack()
 {
     head = NULL;
     tail = NULL;
     length = 0;
 }
 
-linked_list_stack::~linked_list_stack(){
+Linked_List_Stack::~Linked_List_Stack(){
    
 }
 
-void linked_list_stack::push(int n)
+void Linked_List_Stack::push(int n)
 {
     node *tmp = new node;
     tmp->data = n;
@@ -29,12 +29,12 @@ void linked_list_stack::push(int n)
     length++;
 }
 
-int linked_list_stack::len()
+int Linked_List_Stack::len()
 {
     return length;
 }
 
-int linked_list_stack::pop ()
+int Linked_List_Stack::pop ()
 {
     if(length == 0) return -1;
 

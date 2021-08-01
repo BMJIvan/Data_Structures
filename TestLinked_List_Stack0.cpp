@@ -1,16 +1,16 @@
 #include <iostream>
-#include "linked_list_stack/linked_list_stack.h"
+#include "Linked_List_Stack/Linked_List_Stack.h"
 
 int main()
 {
-    linked_list_stack list;
+    Linked_List_Stack list;
     int data;
 
     for(int i = 0; i < 10; i++)
     {
         list.push(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        linked_list_stack::display(&list);
+        Linked_List_Stack::display(&list);
         std::cout<<std::endl;
     }
     
@@ -18,7 +18,7 @@ int main()
     {
         data = list.pop();
         std::cout<<"pop: "<<data<<std::endl;
-        linked_list_stack::display(&list);
+        Linked_List_Stack::display(&list);
         std::cout<<std::endl;
     }
 
@@ -26,12 +26,12 @@ int main()
     {
         list.push(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        linked_list_stack::display(&list);
+        Linked_List_Stack::display(&list);
         std::cout<<std::endl;
     }
 
-    linked_list_stack::delete_list(&list);
-    linked_list_stack::display(&list);
+    Linked_List_Stack::delete_list(&list);
+    Linked_List_Stack::display(&list);
 
     return 0;
 }
