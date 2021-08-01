@@ -7,7 +7,7 @@ linked_list_stack::linked_list_stack()
 }
 
 linked_list_stack::~linked_list_stack(){
-
+   
 }
 
 void linked_list_stack::push(int n)
@@ -37,17 +37,14 @@ int linked_list_stack::len()
 int linked_list_stack::pop ()
 {
     if(length == 0) return -1;
+
     int pos = length;
     node *tmp = head;
-    while(pos > 2)
-    {
-        tmp=tmp->next;
-        --pos;
-    }
-
+    while(pos-- > 2)    tmp=tmp->next;
+    
     int data;
     node *temp;
-    if(length == 1)
+    if(length-- == 1)
     {
         data = tmp->data;
         temp = tmp;
@@ -62,7 +59,6 @@ int linked_list_stack::pop ()
         tail->next = tmp;
         tail = tail->next;
     }
-    length--;
     delete temp;
     return data;
 }

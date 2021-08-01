@@ -1,5 +1,5 @@
-#ifndef linked_list_priority_queue_H
-#define linked_list_priority_queue_H
+#ifndef Linked_List_Priority_Queue_H
+#define Linked_List_Priority_Queue_H
 #include <iostream>
 
 struct node
@@ -8,33 +8,59 @@ struct node
     node *next;
 };
 
-class linked_list_priority_queue
+class Linked_List_Priority_Queue
 {
     private:
         node *head, *tail;
         int length;
-        int M;
+        int Number_Values;
+        bool ascendant;
         
     public:
-        linked_list_priority_queue();
-        linked_list_priority_queue(int M_v);
-        ~linked_list_priority_queue();
+        Linked_List_Priority_Queue(int Number_Values_r, bool ascendant_r);
+        ~Linked_List_Priority_Queue();
 
         void enqueue(int n);
         int len();
         int dequeue();
-        int dequeue_min();
-        void insert(int pos, int value);
-        static void display (linked_list_priority_queue a)
+        void Insert(int pos, int value);
+        bool Compare(int i, int j);
+        static void display (Linked_List_Priority_Queue *list)
         {
-            if (a.length == 0) return;
+            if (list->head == NULL)
+             {
+                std::cout<<"Empty"<<std::endl;
+                return;
+            }
             node *tmp;
-            tmp = a.head;
+            tmp = list->head;
             while(tmp != NULL)
             {
                 std::cout << tmp->data <<","; //std::endl;
                 tmp=tmp->next;
             }
+        }
+        static void delete_list(Linked_List_Priority_Queue *list)
+        {
+            if(list->head == NULL)
+            {
+                std::cout<<"Empty"<<std::endl;
+                return;
+            } 
+
+            node *current = list->head;
+            node *Next = NULL;
+
+            while(current != NULL)
+            {
+                Next = current->next;
+                free(current);
+                current = Next;
+            }
+            list->head = NULL;
+            list->tail = NULL;
+            list->length = 0;
+            std::cout<<"list deleted"<<std::endl;
         }
 };
 

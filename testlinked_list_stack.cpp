@@ -10,7 +10,7 @@ int main()
     {
         list.push(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        linked_list_stack::display(list);
+        linked_list_stack::display(&list);
         std::cout<<std::endl;
     }
     
@@ -18,7 +18,7 @@ int main()
     {
         data = list.pop();
         std::cout<<"pop: "<<data<<std::endl;
-        linked_list_stack::display(list);
+        linked_list_stack::display(&list);
         std::cout<<std::endl;
     }
 
@@ -26,9 +26,12 @@ int main()
     {
         list.push(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        linked_list_stack::display(list);
+        linked_list_stack::display(&list);
         std::cout<<std::endl;
     }
+
+    linked_list_stack::delete_list(&list);
+    linked_list_stack::display(&list);
 
     return 0;
 }

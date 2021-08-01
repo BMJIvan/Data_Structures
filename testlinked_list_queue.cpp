@@ -10,7 +10,7 @@ int main()
     {
         list.enqueue(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        linked_list_queue::display(list);
+        linked_list_queue::display(&list);
         std::cout<<std::endl;
     }
     
@@ -18,7 +18,7 @@ int main()
     {
         data = list.dequeue();
         std::cout<<"pop: "<<data<<std::endl;
-        linked_list_queue::display(list);
+        linked_list_queue::display(&list);
         std::cout<<std::endl;
     }
 
@@ -26,9 +26,12 @@ int main()
     {
         list.enqueue(i);
         std::cout<<"push: "<<i<<","<<std::endl;
-        linked_list_queue::display(list);
+        linked_list_queue::display(&list);
         std::cout<<std::endl;
     }
+
+    linked_list_queue::delete_list(&list);
+    linked_list_queue::display(&list);
 
     return 0;
 }

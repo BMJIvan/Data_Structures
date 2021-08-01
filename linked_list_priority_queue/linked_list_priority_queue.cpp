@@ -1,24 +1,20 @@
-#include "linked_list_priority_queue.h" 
-linked_list_priority_queue::linked_list_priority_queue()
+#include "Linked_List_Priority_Queue.h" 
+
+Linked_List_Priority_Queue::Linked_List_Priority_Queue(int Number_Values_r, bool ascendant_r)
 {
     head = NULL;
     tail = NULL;
     length = 0;
+    Number_Values = Number_Values_r;
+    ascendant = ascendant_r;
 }
 
-linked_list_priority_queue::linked_list_priority_queue(int M_v)
+Linked_List_Priority_Queue::~Linked_List_Priority_Queue()
 {
-    head = NULL;
-    tail = NULL;
-    length = 0;
-    M = M_v;
-}
-
-linked_list_priority_queue::~linked_list_priority_queue(){
 
 }
 
-void linked_list_priority_queue::enqueue(int n)
+void Linked_List_Priority_Queue::enqueue(int n)
 {
     node *tmp = new node;
     tmp->data = n;
@@ -37,13 +33,10 @@ void linked_list_priority_queue::enqueue(int n)
         
         for(int i = 0; i < length; i++)
         {
-            if(tmp->data > compare->data)
+            if(Compare(tmp->data, compare->data))
             {
-                insert(i, tmp->data);
-                if(length > M) 
-                {
-                    dequeue();
-                }
+                Insert(i, tmp->data);
+                if(length > Number_Values)  dequeue();
                 break;
             }
             compare = compare->next;
@@ -51,7 +44,12 @@ void linked_list_priority_queue::enqueue(int n)
     }
 }
 
-void linked_list_priority_queue::insert(int pos, int value)
+bool Linked_List_Priority_Queue::Compare(int i, int j)
+{
+    return ascendant==true ? i < j : i > j;
+}
+
+void Linked_List_Priority_Queue::Insert(int pos, int value)
 {
     node *p = new node;
     p->data = value;
@@ -65,23 +63,19 @@ void linked_list_priority_queue::insert(int pos, int value)
     {
         node *tmp;
         tmp = head;
-        while(pos>1)
-        {
-            tmp=tmp->next;
-            --pos;
-        }
+        while(pos-- > 1)    tmp=tmp->next;
         p->next = tmp->next;
         tmp->next = p;
     }
     length++;
 }
 
-int linked_list_priority_queue::len()
+int Linked_List_Priority_Queue::len()
 {
     return length;
 }
 
-int linked_list_priority_queue::dequeue()
+int Linked_List_Priority_Queue::dequeue()
 {
     if(length == 0) return -1;
     int pos = length;

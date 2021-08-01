@@ -1,5 +1,5 @@
-#ifndef linked_list_stack_H
-#define linked_list_stack_H
+#ifndef Linked_List_Stack_H
+#define Linked_List_Stack_H
 #include <iostream>
 
 struct node
@@ -8,30 +8,55 @@ struct node
     node *next;
 };
 
-class linked_list_stack
+class Linked_List_Stack
 {
     private:
         node *head, *tail;
         int length;
         
     public:
-        linked_list_stack();
-        ~linked_list_stack();
+        Linked_List_Stack();
+        ~Linked_List_Stack();
 
         void push(int n);
         int len();
         int pop ();
-        static void display (linked_list_stack a)
+        static void display (Linked_List_Stack *list)
         {
-            if (a.length == 0) return;
+            if (list->head == NULL)
+             {
+                std::cout<<"Empty"<<std::endl;
+                return;
+            }
             node *tmp;
-            tmp = a.head;
+            tmp = list->head;
             while(tmp != NULL)
             {
                 std::cout << tmp->data <<","; //std::endl;
                 tmp=tmp->next;
             }
         }
-};
+        static void delete_list(Linked_List_Stack *list)
+        {
+            if(list->head == NULL)
+            {
+                std::cout<<"Empty"<<std::endl;
+                return;
+            } 
 
+            node *current = list->head;
+            node *Next = NULL;
+
+            while(current != NULL)
+            {
+                Next = current->next;
+                free(current);
+                current = Next;
+            }
+            list->head = NULL;
+            list->tail = NULL;
+            list->length = 0;
+            std::cout<<"list deleted"<<std::endl;
+        }
+};
 #endif

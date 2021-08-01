@@ -38,15 +38,11 @@ int linked_list_queue::len()
 
 int linked_list_queue::dequeue()
 {
-    if(length == 0) return -1;
+    if(head == NULL) return -1;
     int pos = length;
     node *tmp = head;
-    while(pos > 2)
-    {
-        tmp=tmp->next;
-        --pos;
-    }
-
+    
+    while(pos-- > 2)    tmp=tmp->next;
     int data;
     node *temp;
     if(length == 1)
