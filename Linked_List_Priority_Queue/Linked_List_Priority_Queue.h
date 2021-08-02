@@ -17,7 +17,7 @@ class Linked_List_Priority_Queue
         bool Max_Values;
         
     public:
-        Linked_List_Priority_Queue(int Number_Values_r, bool ascendant_r);
+        Linked_List_Priority_Queue(int Number_Values_r, bool Max_Values_r);
         ~Linked_List_Priority_Queue();
 
         void enqueue(int n);
@@ -59,7 +59,6 @@ class Linked_List_Priority_Queue
                 current = Next;
             }
             list->head = NULL;
-            list->tail = NULL;
             list->length = 0;
             std::cout<<"list deleted"<<std::endl;
         }

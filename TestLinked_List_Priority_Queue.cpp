@@ -4,7 +4,7 @@
 int main()
 {
     int Number_Values = 5;
-    bool Max_Values = true;
+    bool Max_Values = false;
     Linked_List_Priority_Queue list(Number_Values, Max_Values);
     int data;
 

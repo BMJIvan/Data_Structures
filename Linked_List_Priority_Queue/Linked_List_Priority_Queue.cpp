@@ -28,8 +28,8 @@ void Linked_List_Priority_Queue::enqueue(int n)
     {
         node *compare = new node;
         compare = head;
-        
-        for(int i = 0; i < length; i++)
+        int i = 0;
+        for(i; i < length; i++)
         {
             if(Compare(tmp->data, compare->data))
             {
@@ -37,16 +37,9 @@ void Linked_List_Priority_Queue::enqueue(int n)
                 if(length > Number_Values)  dequeue();
                 break;
             }
-            else
-            {
-                if(i == length - 1 && i < Number_Values - 1)
-                {
-                    Append(tmp->data);
-                    break;
-                }
-            }
             compare = compare->next;
         }
+        if(i == length && i < Number_Values)    Append(tmp->data);
     }
 }
 
