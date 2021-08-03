@@ -38,8 +38,3 @@ bool Resizing_Array_Stack::empty()
 {
     return length == 1 && index == 0 ? true : false;
 }
-
-int Resizing_Array_Stack::len()
-{
-    return length;
-}
