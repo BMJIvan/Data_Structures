@@ -18,6 +18,14 @@ void Resizing_Array::push(int value)
     Array[index++] = value;
 }
 
+int Resizing_Array::pop()
+{
+    int item = Array[--index];
+    Array[index] = -1;
+    if(index > 0 && index == length/4) resize(length/2);
+    return item;
+}
+
 void Resizing_Array::resize(int capacity)
 {
     length = capacity;
@@ -53,4 +61,9 @@ bool Resizing_Array::empty()
 {
     return length == 1 && index == 0 ? true : false;
 
+}
+
+int Resizing_Array::len()
+{
+    return length;
 }

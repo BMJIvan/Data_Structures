@@ -40,6 +40,22 @@ int main()
     Resizing_Array::display(&a);
     std::cout << std::endl;
 
+    for(int i = 0; i < 20; i++)
+    {
+        a.push(i);
+        Resizing_Array::display(&a);
+        std::cout << std::endl;
+    }
+
+    int item;
+    for(int i = 25; i > 0; i--)
+    {
+        item = a.pop();
+        Resizing_Array::display(&a);
+        std::cout << "   " << item << "   " << a.len();
+        std::cout << std::endl;
+    }
+
     Resizing_Array::delete_Array(&a);
     Resizing_Array::delete_Array(&b);
     Resizing_Array::delete_Array(&c);

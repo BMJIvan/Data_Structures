@@ -13,9 +13,11 @@ class Resizing_Array
         Resizing_Array();
         ~Resizing_Array();
         void push(int value);
+        int pop();
         void del(int pos);
         void insert(int pos, int value);
         void resize(int capacity);
+        int len();
         bool empty();
         static void display(Resizing_Array *R_Array)
         {
