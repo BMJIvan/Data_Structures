@@ -10,6 +10,7 @@ int main()
     unsigned t0 = 0, t1 = 0;
     double Time;
     int Head[5] = {};
+    
     Resizing_Array_Binary_Heap tree(false);
    
     //Body
@@ -30,7 +31,7 @@ int main()
     {
         tree.Insert(i);
         
-        std::cout<<"push: "<<i<<","<<std::endl;
+        std::cout<<"Insert: "<<i<<","<<std::endl;
         Resizing_Array_Binary_Heap::Show_Binary_Tree(&tree);
         std::cout<<std::endl;
     }
@@ -38,7 +39,7 @@ int main()
     for(int i = 0; i < 5; i++)
     {
         Head[i] = tree.Delete_Head();
-        std::cout<<"delete: "<<Head[i]<<","<<std::endl;
+        std::cout<<"Delete_Head: "<<Head[i]<<","<<std::endl;
         Resizing_Array_Binary_Heap::Show_Binary_Tree(&tree);
         std::cout<<std::endl;
     }
