@@ -64,15 +64,12 @@ void Linked_List_Symbol_Table::pop(std::string key)
     if(length == 0) return;
     if(!exist(key)) return;
 
-    int pos = length;
-    node *tmp = head;
-    while(pos-- > 2)    tmp=tmp->next;
-    
-    int data;
+   
+    node *tmp = head;    
     node *temp;
-    if(length == 1)
+    if(length-- == 1)
     {
-        temp = tmp;
+        temp = change;
         head = NULL;
         tail = NULL;
     }
@@ -83,11 +80,26 @@ void Linked_List_Symbol_Table::pop(std::string key)
         
         if(change->next == NULL)
         {
-            tail->next = tmp;
+            tail->next = change_before;
             tail = tail->next;
         }
-        change->next = NULL;
-        
+        else
+        {
+            if(head == change)
+            {
+                head = change->next;
+                change->next = NULL;
+                temp = change;
+            }
+            else
+            {
+                temp = change;
+                change_before->next = change->next;
+                change->next = NULL;
+                temp = change;
+            }
+            change->next = NULL;
+        }
     }
     delete temp;
     return;

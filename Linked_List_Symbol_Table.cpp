@@ -17,9 +17,12 @@ int main()
     ST.push("E", 50);
     Linked_List_Symbol_Table::display(&ST);
 
-    //ST.pop("B");
-    //ST.pop("D");
-    //Linked_List_Symbol_Table::display(&ST);
+    ST.pop("B");
+    ST.pop("D");
+    Linked_List_Symbol_Table::display(&ST);
 
+    Linked_List_Symbol_Table::delete_list(&ST);
+    
+    Linked_List_Symbol_Table::display(&ST);
     return 0;
 }

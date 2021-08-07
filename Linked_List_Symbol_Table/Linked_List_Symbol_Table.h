@@ -41,16 +41,15 @@ class Linked_List_Symbol_Table
                 tmp=tmp->next;
             }
         }
-        /*
-        static void delete_list(Linked_List_Symbol_Table *list)
+        static void delete_list(Linked_List_Symbol_Table *ST)
         {
-            if(list->head == NULL)
+            if(ST->head == NULL)
             {
                 std::cout<<"Empty"<<std::endl;
                 return;
             } 
 
-            node *current = list->head;
+            node *current = ST->head;
             node *Next = NULL;
 
             while(current != NULL)
@@ -59,10 +58,10 @@ class Linked_List_Symbol_Table
                 free(current);
                 current = Next;
             }
-            list->head = NULL;
-            list->tail = NULL;
-            list->length = 0;
+            ST->head = NULL;
+            ST->tail = NULL;
+            ST->length = 0;
             std::cout<<"list deleted"<<std::endl;
-        }*/
+        }
 };
 #endif
