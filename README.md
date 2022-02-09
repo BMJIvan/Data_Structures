@@ -1,4 +1,4 @@
-### Algorithms
+### Data Structures
 
 Realicé estos ejercicios de un curso de algoritmos de Coursera, el cual fue realizado en Java; sin embargo, los rescribí con C++. Se usaron dos métodos: el primero es cambiar el tamaño del arreglo y el segundo usando listas enlazadas.
 
