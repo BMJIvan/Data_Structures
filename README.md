@@ -1,6 +1,6 @@
 ### Data Structures
 
-Realicé estos ejercicios de un curso de algoritmos de Coursera, el cual fue realizado en Java; sin embargo, los rescribí con C++. Se usaron dos métodos: el primero es cambiar el tamaño del arreglo y el segundo usando listas enlazadas.
+I did these exercises from a Coursera algorithms course, which was done in Java; however, I rewrote them with C++. Two methods were used: Resizing array and linked list
 
 [Linked List](https://github.com/BMJIvan/Data_Structures/tree/master/Linked_List)
 
